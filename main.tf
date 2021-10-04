@@ -36,7 +36,7 @@ data "aws_subnet" "playground-public-subnet" {
 data "aws_eip" "bastion_ip" {
   filter {
     name   = "tag:name"
-    values = ["bastion-ip"]
+    values = [var.bastion_config.elastic_ip_name]
   }
 }
 

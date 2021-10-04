@@ -1,6 +1,10 @@
 Creates a bastion server for connecting to a VPC via ssh
 
-Requires config (.tfvars) in the format:
+Requires an existing VPC with internet gateway.
+
+Can be configured with an availble elastic ip 
+
+ config (.tfvars) in the format:
 ```
 bastion_config = {
   ingress_blocks = [
@@ -17,6 +21,7 @@ bastion_config = {
   ec2_instance_ami   = "<ami id>"
   public_subnet_name = "<name>"
   vpc_name           = "<name>"
+  elastic_ip_name    = "<name>"
 }
 
 region  = "<region>"
